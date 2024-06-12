@@ -14,7 +14,7 @@ impl Solution {
             *hashmap.get_mut(i).unwrap() += 1;
             loop {
                 let max_item = hashmap.iter().map(|(k, v)| (v, k)).max().unwrap();
-                let total_count: usize = hashmap.iter().map(|(k, v)| v).sum();
+                let total_count: usize = hashmap.iter().map(|(_k, v)| v).sum();
                 let extra = total_count - max_item.0;
                 let extra_to_be_removed = extra as i32 - k;
                 if extra_to_be_removed <= 0 {
